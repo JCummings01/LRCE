@@ -1,5 +1,5 @@
 ;(function () {
-  var app = angular.module('LRCE', ['ngRoute', 'ui.bootstrap', 'ui.router'])
+  var app = angular.module('LRCE', ['ui.router'])
 
   // NgEnter Directive for inline editing of student information
   app.directive('ngEnter', function () {
