@@ -5,6 +5,7 @@ Required to run:
 - Node JS
 
 To start:
+- Run 'npm install'
 - Run 'node server/app.js'
 
 Instructions
@@ -14,7 +15,7 @@ To add students:
 
 To edit students:
     - Double-click on the student field you desire to change, enter new information and either hit the Enter key, or click anywhere outside of the input field
-    
+
 To delete students:
     - Click the Trash Can icon next to the desired student you would like to delete from the list
 
