@@ -1,0 +1,84 @@
+<div class="student-grade-list" ng-controller="Main as vm">
+    <div class="list-and-stat-container">
+        <div class="col-sm-7 col-xs-12 list-container border-right">
+            <table>
+                <thead>
+                    <th class="no-padding">First Name</th>
+                    <th class="no-padding">Last Name</th>
+                    <th class="no-padding">Score </th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(key, student) in vm.studentList track by $index">
+                        <td class="no-padding" ng-click="vm.editStudent(student.firstname)">
+                            <input class="student-info" type="text" ng-model="student.firstname" ng-value="{{student.firstname}}" ng-class="{'failing' : student.score < 65, 'passing' : student.score >= 65}" ng-readonly="!($index == vm.editable)" ng-dblclick="vm.editable = $index"
+                                ng-enter="vm.updateStudent(key, student); vm.editable = -1" ng-blur="vm.updateStudent(key, student); vm.editable = -1" />
+                        </td>
+                        <td class="no-padding" ng-click="vm.editStudent(student.lastname)">
+                            <input class="student-info" type="text" ng-model="student.lastname" ng-value="{{student.lastname}}" ng-class="{'failing' : student.score < 65, 'passing' : student.score >= 65}" ng-readonly="!($index == vm.editable)" ng-dblclick="vm.editable = $index"
+                                ng-enter="vm.updateStudent(key, student); vm.editable = -1" ng-blur="vm.updateStudent(key, student); vm.editable = -1" />
+                        </td>
+                        <td class="no-padding" ng-click="vm.editStudent(student.score)">
+                            <input class="student-info" type="number" ng-model="student.score" ng-value="{{student.score}}" ng-class="{'failing' : student.score < 65, 'passing' : student.score >= 65}" ng-readonly="!($index == vm.editable)" ng-dblclick="vm.editable = $index" ng-enter="vm.updateStudent(key, student); vm.editable = -1"
+                                ng-blur="vm.updateStudent(key, student); vm.editable = -1" />
+                        </td>
+                        <td class="no-padding">
+                            <!-- <button class="delete-button" ng-show="$index == vm.editable" ng-click="vm.studentList.splice($index, 1); vm.editable = -1"><i class="material-icons">delete_forever</i></button> -->
+                            <button class="delete-button" ng-click="vm.deleteStudent(key,student)"><i class="material-icons">delete_forever</i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-5 col-xs-12">
+            <table>
+                <thead>
+                    <th class="no-padding">Performance Summary</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="no-padding">
+                            Minimum Score:
+                        </td>
+                        <td class="no-padding">
+                            {{vm.minScore}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="no-padding">
+                            Maximum Score:
+                        </td>
+                        <td class="no-padding">
+                            {{vm.maxScore}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="no-padding">
+                            Average Score:
+                        </td>
+                        <td class="no-padding">
+                            {{vm.avgScore}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="add-form-container">
+        <form name="addForm" ng-submit="vm.addStudent(student)" class="form-one" id="student-form" novalidate>
+            <div class="input-field col-sm-5 col-xs-12">
+                <i class="material-icons prefix no-padding child-icon">account_circle</i>
+                <input ng-model="student.firstname" id="first-name" type="text" class="form-control" required>
+                <label class="form-label mb-0" for="first_name">First Name</label>
+            </div>
+            <div class="input-field col-sm-5 col-xs-12">
+                <input ng-model="student.lastname" id="last-name" type="text" class="form-control" required>
+                <label class="form-label mb-0" for="last_name">Last Name</label>
+            </div>
+            <div class="input-field col-sm-2 col-xs-12">
+                <input ng-model="student.score" id="score" type="number" class="form-control" required>
+                <label class="form-label mb-0" for="score">Score</label>
+            </div>
+            <button type="submit" class="btn-floating btn-large waves-effect waves-light blue lighten-2 add-btn" ng-disabled="addForm.$invalid"><i class="material-icons">add</i></button>
+    </div>
+</div>
+</form>

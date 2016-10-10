@@ -1,0 +1,49 @@
+/*HELPER CLASSES*/
+.no-padding {
+    padding: 0;
+}
+.border-right {
+    border-right: 1px solid lightgrey;
+}
+.padding-20 {
+    padding: 20px;
+}
+.mb-0 {
+    margin-bottom: 0px;
+}
+
+/*ELEMENT STYLING*/
+.student-grade-list {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+.child-icon {
+    margin-top: 15px;
+}
+.add-btn {
+    float: right;
+}
+.list-container {
+    min-height: 250px;
+    max-height: 500px;
+    overflow: scroll;
+}
+.list-container tr td input {
+    border-color: white;
+    margin-bottom: 0px;
+}
+.student-info.failing {
+    color: red !important;
+    font-weight: bolder;
+    background-color: yellow;
+}
+.delete-button {
+    background-color: white;
+    border: none;
+}
+.delete-button:focus {
+    background-color: white;
+}

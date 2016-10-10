@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="LRCE">
+<head>
+
+    <title>LRCE - LogRhythm Code Exercise</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="/app/styles/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- endinject -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js" type="text/javascript"></script>
+    <!-- End Map scripts -->
+
+</head>
+<body>
+
+    <base href="/" />
+
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- PARTIALS RENDER HERE -->
+    <div ui-view></div>
+
+    <!-- bower:js -->
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/angular-animate/angular-animate.js"></script>
+    <script src="/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/lib/angular-route/angular-route.js"></script>
+    <script src="/lib/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbower -->
+
+    <!-- inject:js -->
+    <script src="/app/app.js"></script>
+    <script src="/app/controllers/main.js"></script>
+    <script src="/app/controllers/process.js"></script>
+    <script src="/app/services/storage.factory.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+    <!-- endinject -->
+</body>
+</html>
