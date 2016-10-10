@@ -5,7 +5,7 @@
                 <thead>
                     <th class="no-padding">First Name</th>
                     <th class="no-padding">Last Name</th>
-                    <th class="no-padding">Score </th>
+                    <th class="no-padding">Score</th>
                 </thead>
                 <tbody>
                     <tr ng-repeat="(key, student) in vm.studentList track by $index">
@@ -22,7 +22,6 @@
                                 ng-blur="vm.updateStudent(key, student); vm.editable = -1" />
                         </td>
                         <td class="no-padding">
-                            <!-- <button class="delete-button" ng-show="$index == vm.editable" ng-click="vm.studentList.splice($index, 1); vm.editable = -1"><i class="material-icons">delete_forever</i></button> -->
                             <button class="delete-button" ng-click="vm.deleteStudent(key,student)"><i class="material-icons">delete_forever</i></button>
                         </td>
                     </tr>
